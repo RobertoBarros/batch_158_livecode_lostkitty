@@ -1,0 +1,33 @@
+<h1>All Kitty Found</h1>
+
+<%= link_to 'Add new animal', new_animal_path, class: 'btn btn-success btn-lg' %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Address</th>
+      <th>Found at</th>
+      <th>Actions</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <% @animals.each do |animal| %>
+      <tr>
+        <td><%= animal.category %></td>
+        <td><%= animal.description %></td>
+        <td><%= animal.address %></td>
+        <td><%= animal.found_at %></td>
+        <td>
+          <%= link_to 'Details', animal_path(animal), class: 'btn btn-primary btn-xs' %>
+
+          <%= link_to 'Edit', edit_animal_path(animal), class: 'btn btn-warning btn-xs' %>
+
+          <%= link_to 'Remove', animal_path(animal), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-xs' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,22 @@
+<%= form_for @animal do |f| %>
+
+  <div class="form-group">
+    <%= f.label :category %>
+    <%= f.select :category, ['Cat', 'Dog', 'Fish', 'Horse'], {}, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%=f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit 'Save', class: 'btn btn-primary btn-lg btn-block' %>
+  </div>
+
+<% end %>
